@@ -42,109 +42,138 @@ if (isset($_POST['submit_login'])) {
     }
 }
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
-    <title>Connexion</title>
+    <title>Connexion - Streaming</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--===============================================================================================-->    
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-    <!--===============================================================================================-->    
-    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-    <!--===============================================================================================-->    
-    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <!--===============================================================================================-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #141414; /* Fond sombre, typique des sites de streaming */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: #222; /* Boîte sombre */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            color: #fff;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .form-floating input {
+            background: #333;
+            border: 1px solid #444;
+            color: white;
+        }
+
+        .form-floating input::placeholder {
+            color: #bbb;
+        }
+
+        .form-floating label {
+            color: #999;
+        }
+        .Mailto{ padding-right: 55px;}
+
+        .login-btn {
+            background-color: #e50914; /* Couleur rouge typique des plateformes de streaming comme Netflix */
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 20px;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #f40612;
+        }
+
+        .form-footer {
+            margin-top: 20px;
+        }
+
+        .form-footer a {
+            color: #e50914;
+            text-decoration: none;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Icône dans le titre */
+        .login-container .icon-title {
+            color: #e50914;
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        /* Style pour les petits appareils */
+        @media (max-width: 576px) {
+            .login-container {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <div class="limiter">
-        <div class="container-login100">
-            <div class="wrap-login100">
-                <form class="login100-form validate-form" method="post">
-                    <span class="login100-form-title p-b-26">
-                        Bienvenue
-                    </span>
-                    <span class="login100-form-title p-b-48">
-                        <i class="zmdi zmdi-font"></i>
-                    </span>
+    <div class="login-container">
+        <i class="fas fa-play-circle icon-title"></i> <!-- Icône en lien avec le streaming -->
+        <h2>Connexion</h2>
 
-                    <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-                        <input class="input100" type="text" name="email">
-                        <span class="focus-input100" data-placeholder="Email"></span>
-                    </div>
-
-                    <div class="wrap-input100 validate-input" data-validate="Enter password">
-                        <span class="btn-show-pass">
-                            <i class="zmdi zmdi-eye"></i>
-                        </span>
-                        <input class="input100" type="password" name="mdp">
-                        <span class="focus-input100" data-placeholder="Password"></span>
-                    </div>
-
-                    <div class="container-login100-form-btn">
-                        <div class="wrap-login100-form-btn">
-                            <div class="login100-form-bgbtn"></div>
-                            <button class="login100-form-btn" name="submit_login">
-                                Cliquez ici pour vous connecter
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="text-center p-t-115">
-                        <span class="txt1">
-                            Vous n'avez pas de compte?
-                        </span>
-
-                        <a class="txt2" href="register.php">
-                            Inscrivez-vous
-                        </a>
-                    </div>
-
-                </form>
+        <form method="post">
+            <div class="form-floating mb-3">
+            <label for="email" class="Mailto">Email:        </label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+                
             </div>
-        </div>
+
+            <div class="form-floating mb-3">
+            <label for="mdp">Mot de passe: </label>
+                <input type="password" class="form-control" id="mdp" name="mdp" placeholder="Mot de passe" required>
+                
+            </div>
+
+            <button class="login-btn" type="submit" name="submit_login">Connexion</button>
+
+            <div class="form-footer">
+                <p>Pas de compte ? <a href="register.php">Inscrivez-vous</a></p>
+            </div>
+        </form>
     </div>
 
-    <div id="dropDownSelect1"></div>
-
-    <!--===============================================================================================-->
-    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/animsition/js/animsition.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/bootstrap/js/popper.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/select2/select2.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/daterangepicker/moment.min.js"></script>
-    <script src="vendor/daterangepicker/daterangepicker.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/countdowntime/countdowntime.js"></script>
-    <!--===============================================================================================-->
-    <script src="js/main.js"></script>
-
-    <!-- Ajoute ton JavaScript personnalisé ici -->
-    <script>
-        // Ton code JavaScript personnalisé
-    </script>
-
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
