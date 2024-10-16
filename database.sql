@@ -122,8 +122,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_m`, `login`, `email`, `mdp`, `lvl`, `date_deb_abo`, `date_fin_abo`, `ip_ban`, `type_abonnement_en_jours`) VALUES
-(1, 'admin', 'diopmouhammed1@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0', NULL),
-(6, 'Todorki Shoto', 'ahmedtijany660@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1, '2024-04-23 22:28:38', '2024-04-28 22:28:38', '::1', 5);
+(1, 'admin', 'admin@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0', NULL),
+(6, 'Todorki Shoto', 'user@gmail.com', '12dea96fec20593566ab75692c9949596833adc9', 1, '2024-04-23 22:28:38', '2024-04-28 22:28:38', '::1', 5);
 
 --
 -- Index pour les tables déchargées
